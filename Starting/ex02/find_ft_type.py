@@ -1,4 +1,4 @@
-def all_thing_is_obj(object: any) -> int:   
+def all_thing_is_obj(object: any) -> int:
     if type(object) == list:
         print("List :", type(object))
     elif type(object) == tuple:
@@ -13,7 +13,6 @@ def all_thing_is_obj(object: any) -> int:
         print("Type not found")
     return 42
 
-    
 
 # list2 = ["Hello", "tata!"]
 
