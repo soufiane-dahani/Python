@@ -77,3 +77,75 @@ if isinstance(my_list, list):
 ```
 
 **Tip:** Use `isinstance()` - it's more flexible and Pythonic! 🐍
+
+## Understanding `__name__` in Python
+
+### What is `__name__`?
+`__name__` is a special built-in variable that tells you how the file is being used.
+
+```python
+# When you RUN the file directly:
+# python script.py
+# __name__ = "__main__"
+
+# When you IMPORT the file:
+# import script
+# __name__ = "script" (the module name)
+```
+
+### Simple Example
+
+**File: helper.py**
+```python
+print("My name is:", __name__)
+
+if __name__ == "__main__":
+    print("I'm the MAIN character! (running directly)")
+else:
+    print("I'm a supporting character (being imported)")
+```
+
+**Scenario 1: Run directly**
+```bash
+$ python helper.py
+My name is: __main__
+I'm the MAIN character! (running directly)
+```
+
+**Scenario 2: Import from another file**
+```python
+# In main.py
+import helper
+
+# Output:
+# My name is: helper
+# I'm a supporting character (being imported)
+```
+
+### Practical Use Case
+
+```python
+# helper.py
+def add(a, b):
+    return a + b
+
+# Test code - only runs when testing this file directly
+if __name__ == "__main__":
+    print(add(2, 3))  # Only runs when: python helper.py
+    # Won't run when: import helper
+```
+
+### Why Use It?
+
+```python
+import sys
+
+# This code ALWAYS runs
+print("This always runs")
+
+# This code ONLY runs when executed directly
+if __name__ == "__main__":
+    print("This only runs when: python script.py")
+```
+
+**Summary:** `if __name__ == "__main__":` means "only run this code if the file is executed directly, not when imported" 🐍
