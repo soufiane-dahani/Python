@@ -1,10 +1,10 @@
 def ft_filter(function, iterable):
     if function is None:
-        return (item for item in iterable if item) 
+        return (item for item in iterable if item)
     return (item for item in iterable if function(item))
 
 
-# numbers = [1, 2, 3, None, 5, 6]  
+# numbers = [1, 2, 3, None, 5, 6]
 
 
 # def is_even(n):

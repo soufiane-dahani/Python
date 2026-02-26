@@ -1,4 +1,4 @@
-import sys 
+import sys
 
 
 def ft_building(object: any) -> int:
@@ -6,7 +6,6 @@ def ft_building(object: any) -> int:
     number_up = 0
     number_low = 0
     number_spaces = 0
-    number_other = 0
     total = 0
     number_digits = 0
 
@@ -30,26 +29,27 @@ def ft_building(object: any) -> int:
         i += 1
 
 
-def filterstring(string , number):
+def filterstring(string, number):
     string = string.split(" ")
-    # list1: list = [item for item in string if len(item) >= int (number)]
-    fn = lambda x: len(x)>= int(number)
-    list1: list = [item for item in string if fn(item)]
+    try:
+        number = int(number)
+    except ValueError:
+        raise AssertionError("AssertionError: the arguments are bad")
+    list1 = [item for item in string if (lambda x: len(x) > number)(item)]
     return list1
-
 
 
 if __name__ == "__main__":
     try:
         if len(sys.argv) != 3:
             raise AssertionError("AssertionError: the arguments are bad")
-        else :
+        else:
             ft_building(sys.argv[1])
             ft_building(sys.argv[2])
             if not isinstance(sys.argv[1], str):
-                raise AssertionError("AssertionError: the arguments are bad")
-            if not isinstance(sys.argv[2], int):
-                raise AssertionError("AssertionError: the arguments are bad")
+                raise AssertionError("AssertionError: the arguments are bad 3")
+            if not isinstance(sys.argv[2], str):
+                raise AssertionError("AssertionError: the arguments are bad 4")
             print(filterstring(sys.argv[1], sys.argv[2]))
     except AssertionError as error:
         print(error)
