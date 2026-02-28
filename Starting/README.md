@@ -1,3 +1,7 @@
+``` bash    
+Summary: Today, you will learn the basics of the Python programming language.
+Version: 1.3
+```
 ``` bash 
 
 # List - mutable, ordered, duplicates OK
