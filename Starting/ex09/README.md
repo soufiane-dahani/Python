@@ -41,6 +41,30 @@ From the `ex09` directory:
 pip install .
 ```
 
+
+This is why when you do : 
+
+```bash
+pip install build
+```
+```bash
+python -m build
+```
+you get:
+
+```bash
+
+dist/ft_package-0.0.1.tar.gz
+dist/ft_package-0.0.1-py3-none-any.whl
+```
+```bash
+pip 
+```
+does this automatically when installing from 
+```bash
+.
+```
+
 Then run:
 
 ```bash
