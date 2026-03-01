@@ -15,5 +15,5 @@ def ft_tqdm(lst: range) -> None:
 
         print(f"{progress}%|{bar}| {i+1}/{total}", end="\r", flush=True)
         yield i
-        
+
     print()
